@@ -1,0 +1,11 @@
+/* the boys are back in town */
+
+* {
+    animation: blink-animation .2s steps(3, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
