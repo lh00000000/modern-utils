@@ -1,1 +1,1 @@
-warning: the modern world is depreciated. continue at your own risk.
+warning: the modern world was depreciated. continue at your own risk.
