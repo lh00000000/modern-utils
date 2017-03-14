@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+"""for environment-checking tasks"""
+
 def is_python2():
     try:
         print("💩")
