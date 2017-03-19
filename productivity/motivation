@@ -1,0 +1,38 @@
+#!/usr/bin/python
+
+import subprocess
+import platform
+import random
+import sys
+
+MOTIVATION = "POOP"
+
+
+class WindowsVoice:
+    def speak(self):
+        print('just give up')
+
+class OSXVoice:
+    VOICES = ["Alex", "Alice", "Alva", "Amelie", "Anna", "Carmit", "Damayanti", "Daniel", "Diego", "Ellen", "Fiona", "Fred", "Ioana", "Joana", "Jorge", "Juan", "Kanya", "Karen", "Kyoko", "Laura", "Lekha", "Luca", "Luciana", "Maged", "Mariska", "Mei-Jia", "Melina", "Milena", "Moira", "Monica", "Nora", "Paulina", "Samantha", "Sara", "Satu", "Sin-ji", "Tessa", "Thomas", "Ting-Ting", "Veena", "Victoria", "Xander", "Yelda", "Yuna", "Yuri", "Zosia", "Zuzana"]
+
+    def speak(self, text):
+        subprocess.call(['say', '-v', random.choice(self.VOICES), text])
+
+
+try:
+    PLATFORM_VOICE = {
+        'Darwin': OSXVoice(),
+        'Windows': WindowsVoice()
+    }[platform.system()]
+except:
+    print("ERROR: The organization that makes your OS is not monolithic enough.")
+    os.exit()
+
+
+import time
+if __name__ == '__main__':
+    period = float(dict(enumerate(sys.argv)).get(1, .3))
+    while True:
+        PLATFORM_VOICE.speak(MOTIVATION)
+        time.sleep(period)
+
