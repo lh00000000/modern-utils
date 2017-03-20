@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nohup sh -c 'while true; do $(say -v"?" | awk "{print \$1}" | xargs -I % sh -c "say -v % 'poop' && sleep 10"); done' > /dev/null 2>&1 &
